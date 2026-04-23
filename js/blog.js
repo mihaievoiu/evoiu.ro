@@ -21,7 +21,7 @@ async function loadBlog() {
 
     const articles = await Promise.all(
       posts.map(slug =>
-        fetch(`content/blog/${slug}.md`)
+        fetch(`content/blog/${slug}/index.md`)
           .then(r => r.text())
           .then(text => ({ slug, ...parseFrontmatter(text).meta }))
       )

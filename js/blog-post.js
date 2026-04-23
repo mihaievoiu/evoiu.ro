@@ -20,7 +20,7 @@ async function loadPost() {
   if (!slug) { window.location.href = 'blog.html'; return; }
 
   try {
-    const text        = await fetch(`content/blog/${slug}.md`).then(r => r.text());
+    const text        = await fetch(`content/blog/${slug}/index.md`).then(r => r.text());
     const { meta, body } = parseFrontmatter(text);
 
     document.title = `${meta.title} — Evoiu`;
