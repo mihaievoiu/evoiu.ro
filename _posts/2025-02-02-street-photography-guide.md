@@ -1,7 +1,7 @@
 ---
 title: A Beginner's Guide to Street Photography
 date: 2025-02-02
-cover: /content/blog/street-photography-guide/images/cover.jpg
+cover: https://picsum.photos/seed/nat1/1200/800
 excerpt: Street photography can feel intimidating. Here's how I learned to be invisible with a camera, and why getting close makes all the difference.
 ---
 
