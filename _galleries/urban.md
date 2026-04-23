@@ -1,0 +1,22 @@
+---
+title: Urban
+description: City life, architecture, and the geometry of everyday spaces.
+cover: "https://picsum.photos/seed/urban-cover/800/600"
+images:
+  - src: "https://picsum.photos/seed/urb1/1200/800"
+    caption: Steel and glass
+  - src: "https://picsum.photos/seed/urb2/800/1100"
+    caption: Looking up
+  - src: "https://picsum.photos/seed/urb3/1200/900"
+    caption: Morning commute
+  - src: "https://picsum.photos/seed/urb4/900/1200"
+    caption: Concrete shadows
+  - src: "https://picsum.photos/seed/urb5/1200/800"
+    caption: Neon and rain
+  - src: "https://picsum.photos/seed/urb6/800/800"
+    caption: Symmetry
+  - src: "https://picsum.photos/seed/urb7/1100/900"
+    caption: The underpass
+  - src: "https://picsum.photos/seed/urb8/900/1200"
+    caption: Fire escape
+---

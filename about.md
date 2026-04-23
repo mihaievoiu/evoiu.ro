@@ -1,6 +1,8 @@
 ---
+layout: about
+title: About
 name: Mihai Evoiu
-photo: https://picsum.photos/seed/mihai-portrait/600/800
+photo: "https://picsum.photos/seed/mihai-portrait/600/800"
 lead: Photographer based in Romania, working across landscape, street, and portrait photography.
 ---
 
