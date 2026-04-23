@@ -8,9 +8,12 @@ layout: default
 </div>
 
 {% if page.cover %}
-<img class="post-cover"
-     src="{{ site.baseurl }}{{ page.cover }}"
-     alt="{{ page.title }}">
+  {% if page.cover contains '://' %}
+    {% assign cover_src = page.cover %}
+  {% else %}
+    {% assign cover_src = site.baseurl | append: page.cover %}
+  {% endif %}
+<img class="post-cover" src="{{ cover_src }}" alt="{{ page.title }}">
 {% endif %}
 
 <div class="post-body">{{ content }}</div>
