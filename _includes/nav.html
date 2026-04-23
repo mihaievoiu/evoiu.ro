@@ -1,0 +1,12 @@
+<nav id="site-nav"{% unless page.hero %} class="solid"{% endunless %}>
+  <a class="nav-logo" href="{{ site.baseurl }}/">Evoiu</a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="{{ site.baseurl }}/"{% if page.url == "/" %} class="active"{% endif %}>Home</a></li>
+    <li><a href="{{ site.baseurl }}/gallery.html"{% if page.url contains "gallery" %} class="active"{% endif %}>Galleries</a></li>
+    <li><a href="{{ site.baseurl }}/blog.html"{% if page.url contains "blog" %} class="active"{% endif %}>Blog</a></li>
+    <li><a href="{{ site.baseurl }}/about.html"{% if page.url contains "about" %} class="active"{% endif %}>About</a></li>
+  </ul>
+</nav>

@@ -1,67 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Evoiu — Photography</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+---
+layout: default
+hero: true
+---
+<section class="hero">
+  <div class="hero-bg" style="background-image: url('https://picsum.photos/seed/evoiu-hero/1920/1080')"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>Evoiu</h1>
+    <p>Photography &amp; Visual Stories</p>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
 
-  <section class="hero">
-    <div class="hero-bg" id="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1>Evoiu</h1>
-      <p>Photography &amp; Visual Stories</p>
-    </div>
-    <div class="hero-scroll">Scroll</div>
-  </section>
-
-  <section class="section">
-    <p class="section-label">Galleries</p>
-    <div class="gallery-grid" id="gallery-grid">
-      <div class="loading">Loading…</div>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Evoiu. All rights reserved.</p>
-  </footer>
-
-  <script src="js/nav.js"></script>
-  <script>
-    const heroBg = document.getElementById('hero-bg');
-    heroBg.style.backgroundImage = "url('https://picsum.photos/seed/evoiu-hero/1920/1080')";
-    setTimeout(() => heroBg.classList.add('loaded'), 80);
-
-    async function loadFeatured() {
-      const container = document.getElementById('gallery-grid');
-      try {
-        const { galleries } = await fetch('content/galleries/index.json').then(r => r.json());
-        const metas = await Promise.all(
-          galleries.map(slug =>
-            fetch(`content/galleries/${slug}/meta.json`)
-              .then(r => r.json())
-              .then(m => ({ slug, ...m }))
-          )
-        );
-        container.innerHTML = metas.map(g => `
-          <a class="gallery-card" href="gallery-detail.html?slug=${g.slug}">
-            <div class="gallery-card-img-wrap">
-              <img class="gallery-card-img" src="${g.cover}" alt="${g.title}" loading="lazy">
-            </div>
-            <div class="gallery-card-body">
-              <h2 class="gallery-card-title">${g.title}</h2>
-              <p class="gallery-card-desc">${g.description}</p>
-            </div>
-          </a>
-        `).join('');
-      } catch {
-        container.innerHTML = '<p class="loading">Could not load galleries.</p>';
-      }
-    }
-    loadFeatured();
-  </script>
-</body>
-</html>
+<section class="section">
+  <p class="section-label">Galleries</p>
+  <div class="gallery-grid">
+    {% for gallery in site.galleries %}
+    <a class="gallery-card" href="{{ site.baseurl }}{{ gallery.url }}">
+      <div class="gallery-card-img-wrap">
+        <img class="gallery-card-img" src="{{ gallery.cover }}" alt="{{ gallery.title }}" loading="lazy">
+      </div>
+      <div class="gallery-card-body">
+        <h2 class="gallery-card-title">{{ gallery.title }}</h2>
+        <p class="gallery-card-desc">{{ gallery.description }}</p>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>

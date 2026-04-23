@@ -1,29 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galleries — Evoiu</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+---
+layout: default
+title: Galleries
+---
+<div class="page-header">
+  <h1>Galleries</h1>
+  <p>A collection of photographic work across different subjects and places.</p>
+</div>
 
-  <div class="page-header">
-    <h1>Galleries</h1>
-    <p>A collection of photographic work across different subjects and places.</p>
+<div class="container" style="padding-bottom: 5rem">
+  <div class="gallery-grid">
+    {% for gallery in site.galleries %}
+    <a class="gallery-card" href="{{ site.baseurl }}{{ gallery.url }}">
+      <div class="gallery-card-img-wrap">
+        <img class="gallery-card-img" src="{{ gallery.cover }}" alt="{{ gallery.title }}" loading="lazy">
+      </div>
+      <div class="gallery-card-body">
+        <h2 class="gallery-card-title">{{ gallery.title }}</h2>
+        <p class="gallery-card-desc">{{ gallery.description }}</p>
+      </div>
+    </a>
+    {% endfor %}
   </div>
-
-  <div class="container" style="padding-bottom: 5rem">
-    <div class="gallery-grid" id="gallery-grid">
-      <div class="loading">Loading galleries…</div>
-    </div>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 Evoiu. All rights reserved.</p>
-  </footer>
-
-  <script src="js/nav.js"></script>
-  <script src="js/gallery.js"></script>
-</body>
-</html>
+</div>

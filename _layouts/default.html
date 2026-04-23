@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>{% include head.html %}</head>
+<body>
+  {% include nav.html %}
+  {{ content }}
+  <footer>
+    <p>&copy; {{ site.time | date: '%Y' }} Evoiu. All rights reserved.</p>
+  </footer>
+  <script src="{{ site.baseurl }}/js/main.js"></script>
+  {% if layout.fancybox %}
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.umd.js"></script>
+  <script>
+    Fancybox.bind('[data-fancybox="gallery"]', {
+      Thumbs: { type: 'classic' },
+      Toolbar: { display: { left: ['infobar'], middle: [], right: ['zoomIn','zoomOut','close'] } }
+    });
+  </script>
+  {% endif %}
+</body>
+</html>

@@ -1,0 +1,20 @@
+title: Evoiu Photography
+baseurl: "/evoiu.ro"
+url: "https://mihaievoiu.github.io"
+
+permalink: /blog/:slug/
+
+collections:
+  galleries:
+    output: true
+    permalink: /galleries/:name/
+
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+  - scope: { path: "", type: galleries }
+    values: { layout: gallery }
+
+exclude:
+  - .claude
+  - .vscode

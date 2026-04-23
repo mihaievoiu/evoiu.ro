@@ -1,0 +1,22 @@
+---
+layout: default
+fancybox: true
+---
+<div class="gallery-detail-header">
+  <a class="back-btn" href="{{ site.baseurl }}/gallery.html">All Galleries</a>
+  <h1 class="gallery-detail-title">{{ page.title }}</h1>
+  <p class="gallery-detail-desc">{{ page.description }}</p>
+</div>
+
+<div class="container">
+  <div class="masonry-grid">
+    {% for image in page.images %}
+    <a class="masonry-item"
+       href="{{ image.src }}"
+       data-fancybox="gallery"
+       data-caption="{{ image.caption }}">
+      <img src="{{ image.src }}" alt="{{ image.caption }}" loading="lazy">
+    </a>
+    {% endfor %}
+  </div>
+</div>

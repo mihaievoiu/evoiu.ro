@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<div class="about-layout">
+  {% if page.photo %}
+  <img class="about-photo" src="{{ page.photo }}" alt="{{ page.name }}">
+  {% endif %}
+  <div class="about-content">
+    <h1>{{ page.name }}</h1>
+    {% if page.lead %}<p class="about-lead">{{ page.lead }}</p>{% endif %}
+    <div class="about-body">{{ content }}</div>
+  </div>
+</div>
