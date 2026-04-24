@@ -10,12 +10,16 @@
   <script src="{{ site.baseurl }}/js/main.js"></script>
   {% if layout.fancybox %}
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.umd.js"></script>
+  {% if page.cloudinary_tag %}
+  <script src="{{ site.baseurl }}/js/cloudinary-gallery.js"></script>
+  {% else %}
   <script>
     Fancybox.bind('[data-fancybox="gallery"]', {
       Thumbs: { type: 'classic' },
       Toolbar: { display: { left: ['infobar'], middle: [], right: ['zoomIn','zoomOut','close'] } }
     });
   </script>
+  {% endif %}
   {% endif %}
 </body>
 </html>

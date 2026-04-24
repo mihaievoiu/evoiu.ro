@@ -1,0 +1,47 @@
+(async function () {
+  const grid = document.getElementById('masonry-grid');
+  if (!grid || !grid.dataset.tag) return;
+
+  const tag       = grid.dataset.tag;
+  const cloudName = grid.dataset.cloud;
+  const sort      = grid.dataset.sort || 'alphabetical';
+  const base      = `https://res.cloudinary.com/${cloudName}/image/upload/`;
+
+  try {
+    const res    = await fetch(`https://res.cloudinary.com/${cloudName}/image/list/${tag}.json`);
+    const data   = await res.json();
+    let   images = data.resources || [];
+
+    switch (sort) {
+      case 'alphabetical': images.sort((a, b) => a.public_id.localeCompare(b.public_id)); break;
+      case 'reverse':      images.sort((a, b) => b.public_id.localeCompare(a.public_id)); break;
+      case 'newest':       images.sort((a, b) => new Date(b.created_at) - new Date(a.created_at)); break;
+      case 'oldest':       images.sort((a, b) => new Date(a.created_at) - new Date(b.created_at)); break;
+    }
+
+    const url = (img, w) =>
+      `${base}f_auto,q_auto,w_${w}/v${img.version}/${img.public_id}.${img.format}`;
+
+    grid.innerHTML = images.map(img => `
+      <a class="masonry-item"
+         href="${url(img, 2500)}"
+         data-fancybox="gallery"
+         data-caption="">
+        <img src="${url(img, 800)}"
+             srcset="${url(img, 400)} 400w,
+                     ${url(img, 800)} 800w,
+                     ${url(img, 1200)} 1200w"
+             sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 400px"
+             alt=""
+             loading="lazy"
+             decoding="async">
+      </a>`).join('');
+
+    Fancybox.bind('[data-fancybox="gallery"]', {
+      Thumbs: { type: 'classic' },
+      Toolbar: { display: { left: ['infobar'], middle: [], right: ['zoomIn', 'zoomOut', 'close'] } }
+    });
+  } catch {
+    grid.innerHTML = '<p class="loading">Could not load images.</p>';
+  }
+})();
