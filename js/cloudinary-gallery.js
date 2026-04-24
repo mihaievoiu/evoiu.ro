@@ -7,8 +7,11 @@
   const sort      = grid.dataset.sort || 'alphabetical';
   const base      = `https://res.cloudinary.com/${cloudName}/image/upload/`;
 
+  const fetchUrl = `https://res.cloudinary.com/${cloudName}/image/list/${tag}.json`;
+  console.log('[cloudinary-gallery] tag:', JSON.stringify(tag), '| cloud:', JSON.stringify(cloudName), '| url:', fetchUrl);
+
   try {
-    const res = await fetch(`https://res.cloudinary.com/${cloudName}/image/list/${tag}.json`);
+    const res = await fetch(fetchUrl);
     if (!res.ok) throw new Error(`HTTP ${res.status} — check Cloudinary Settings → Security → Resource list`);
     const data   = await res.json();
     let   images = data.resources || [];
@@ -18,8 +21,8 @@
     }
 
     switch (sort) {
-      case 'alphabetical': images.sort((a, b) => a.public_id.localeCompare(b.public_id)); break;
-      case 'reverse':      images.sort((a, b) => b.public_id.localeCompare(a.public_id)); break;
+      case 'alphabetical': images.sort((a, b) => a.public_id.localeCompare(b.public_id, undefined, { numeric: true })); break;
+      case 'reverse':      images.sort((a, b) => b.public_id.localeCompare(a.public_id, undefined, { numeric: true })); break;
       case 'newest':       images.sort((a, b) => new Date(b.created_at) - new Date(a.created_at)); break;
       case 'oldest':       images.sort((a, b) => new Date(a.created_at) - new Date(b.created_at)); break;
     }
