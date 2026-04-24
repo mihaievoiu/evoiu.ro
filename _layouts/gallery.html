@@ -13,7 +13,7 @@ fancybox: true
     {% for image in page.images %}
     {% if image.src contains '/upload/' %}
       {% assign _lbparts = image.src | split: '/upload/' %}
-      {% assign _lburl = _lbparts[0] | append: '/upload/f_auto,q_auto,w_1600/' | append: _lbparts[1] %}
+      {% assign _lburl = _lbparts[0] | append: '/upload/f_auto,q_auto,w_2500/' | append: _lbparts[1] %}
     {% else %}
       {% assign _lburl = image.src %}
     {% endif %}
