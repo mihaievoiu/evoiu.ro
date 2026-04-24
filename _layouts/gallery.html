@@ -9,34 +9,23 @@ fancybox: true
 </div>
 
 <div class="container">
-  <div class="masonry-grid" id="masonry-grid"
-    {% if page.cloudinary_tag %}
-    data-tag="{{ page.cloudinary_tag }}"
-    data-cloud="{{ site.cloudinary_cloud_name }}"
-    data-sort="{{ page.cloudinary_sort | default: 'alphabetical' }}"
-    {% endif %}>
-
-    {% if page.cloudinary_tag %}
-    <p class="loading">Loading images…</p>
+  <div class="masonry-grid">
+    {% for image in page.images %}
+    {% if image.src contains '/upload/' %}
+      {% assign _lbparts = image.src | split: '/upload/' %}
+      {% assign _lburl = _lbparts[0] | append: '/upload/f_auto,q_auto,w_2500/' | append: _lbparts[1] %}
     {% else %}
-      {% for image in page.images %}
-      {% if image.src contains '/upload/' %}
-        {% assign _lbparts = image.src | split: '/upload/' %}
-        {% assign _lburl = _lbparts[0] | append: '/upload/f_auto,q_auto,w_2500/' | append: _lbparts[1] %}
-      {% else %}
-        {% assign _lburl = image.src %}
-      {% endif %}
-      <a class="masonry-item"
-         href="{{ _lburl }}"
-         data-fancybox="gallery"
-         data-caption="{{ image.caption }}">
-        {% include cloudinary_img.html
-           src=image.src
-           alt=image.caption
-           sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 400px" %}
-      </a>
-      {% endfor %}
+      {% assign _lburl = image.src %}
     {% endif %}
-
+    <a class="masonry-item"
+       href="{{ _lburl }}"
+       data-fancybox="gallery"
+       data-caption="{{ image.caption }}">
+      {% include cloudinary_img.html
+         src=image.src
+         alt=image.caption
+         sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 400px" %}
+    </a>
+    {% endfor %}
   </div>
 </div>
