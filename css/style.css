@@ -577,7 +577,15 @@ footer {
 }
 
 .fancybox__toolbar .carousel__button {
-  color: #1b1a18;
+  color: #1b1a18 !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.fancybox__toolbar .carousel__button svg {
+  stroke: #1b1a18;
+  fill: none;
 }
 
 .fancybox__infobar {
