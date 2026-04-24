@@ -531,3 +531,78 @@ footer {
   .gallery-grid { grid-template-columns: 1fr; gap: 1.5rem; }
   .blog-grid { grid-template-columns: 1fr; gap: 2rem; }
 }
+
+/* ── FANCYBOX OVERRIDES ── */
+
+/* Solid white backdrop */
+.fancybox__backdrop {
+  background: #fff;
+}
+
+/* Smaller image with 2px black border */
+.fancybox__content {
+  padding: 1rem;
+  background: transparent;
+}
+
+.fancybox__container .fancybox-image {
+  outline: 2px solid #000 !important;
+  outline-offset: -1px;
+  max-height: 80vh;
+  max-width: 80vw;
+  width: auto;
+  height: auto;
+}
+
+/* Dark controls on light background */
+.fancybox__container {
+  --fancybox-accent-color: #1b1a18;
+}
+
+.carousel__button {
+  color: #1b1a18;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.carousel__button svg {
+  stroke: #1b1a18;
+  filter: none;
+}
+
+.fancybox__toolbar {
+  background: transparent;
+  color: #1b1a18;
+}
+
+.fancybox__toolbar__column.is-right .f-button {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border-radius: 4px;
+}
+
+.fancybox__toolbar__column.is-right .f-button svg {
+  stroke: #000 !important;
+  fill: none;
+}
+
+.fancybox__infobar {
+  color: #1b1a18;
+  text-shadow: none;
+}
+
+@media (max-width: 640px) {
+  .fancybox__nav,
+  .carousel__button.is-prev,
+  .carousel__button.is-next { display: none !important; }
+  .fancybox__thumbs          { display: none !important; }
+
+  .fancybox__content {
+    padding: 12px;
+  }
+
+  .fancybox__container .fancybox-image {
+    max-width: calc(100vw - 24px) !important;
+    max-height: calc(100vh - 24px) !important;
+  }
+}
