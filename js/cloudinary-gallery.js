@@ -8,9 +8,14 @@
   const base      = `https://res.cloudinary.com/${cloudName}/image/upload/`;
 
   try {
-    const res    = await fetch(`https://res.cloudinary.com/${cloudName}/image/list/${tag}.json`);
+    const res = await fetch(`https://res.cloudinary.com/${cloudName}/image/list/${tag}.json`);
+    if (!res.ok) throw new Error(`HTTP ${res.status} — check Cloudinary Settings → Security → Resource list`);
     const data   = await res.json();
     let   images = data.resources || [];
+    if (images.length === 0) {
+      grid.innerHTML = '<p class="loading">No images found for this tag.</p>';
+      return;
+    }
 
     switch (sort) {
       case 'alphabetical': images.sort((a, b) => a.public_id.localeCompare(b.public_id)); break;
@@ -41,7 +46,8 @@
       Thumbs: { type: 'classic' },
       Toolbar: { display: { left: ['infobar'], middle: [], right: ['zoomIn', 'zoomOut', 'close'] } }
     });
-  } catch {
-    grid.innerHTML = '<p class="loading">Could not load images.</p>';
+  } catch (err) {
+    console.error('[cloudinary-gallery]', err.message);
+    grid.innerHTML = `<p class="loading">Could not load images — see console for details.</p>`;
   }
 })();
