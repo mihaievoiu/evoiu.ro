@@ -20,9 +20,11 @@
       return;
     }
 
+    const naturalKey = str => str.replace(/(\d+)/g, n => n.padStart(10, '0'));
+
     switch (sort) {
-      case 'alphabetical': images.sort((a, b) => a.public_id.localeCompare(b.public_id, undefined, { numeric: true })); break;
-      case 'reverse':      images.sort((a, b) => b.public_id.localeCompare(a.public_id, undefined, { numeric: true })); break;
+      case 'alphabetical': images.sort((a, b) => naturalKey(a.public_id).localeCompare(naturalKey(b.public_id))); break;
+      case 'reverse':      images.sort((a, b) => naturalKey(b.public_id).localeCompare(naturalKey(a.public_id))); break;
       case 'newest':       images.sort((a, b) => new Date(b.created_at) - new Date(a.created_at)); break;
       case 'oldest':       images.sort((a, b) => new Date(a.created_at) - new Date(b.created_at)); break;
     }
