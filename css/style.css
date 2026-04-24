@@ -584,3 +584,9 @@ footer {
   color: #1b1a18;
   text-shadow: none;
 }
+
+@media (max-width: 640px) {
+  .carousel__button.is-prev,
+  .carousel__button.is-next { display: none !important; }
+  .fancybox__thumbs          { display: none !important; }
+}
