@@ -545,8 +545,8 @@ footer {
   background: transparent;
 }
 
-.fancybox__image {
-  border: 2px solid #1b1a18;
+.fancybox__container .fancybox__image {
+  border: 2px solid #000 !important;
   max-height: 72vh;
   max-width: 72vw;
   width: auto;
