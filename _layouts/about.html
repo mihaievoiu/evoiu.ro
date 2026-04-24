@@ -3,7 +3,11 @@ layout: default
 ---
 <div class="about-layout">
   {% if page.photo %}
-  <img class="about-photo" src="{{ page.photo }}" alt="{{ page.name }}">
+  {% include cloudinary_img.html
+     src=page.photo
+     alt=page.name
+     class="about-photo"
+     sizes="(max-width: 700px) 100vw, 400px" %}
   {% endif %}
   <div class="about-content">
     <h1>{{ page.name }}</h1>

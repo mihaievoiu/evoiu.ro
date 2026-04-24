@@ -3,7 +3,13 @@ layout: default
 hero: true
 ---
 <section class="hero">
-  <div class="hero-bg" style="background-image: url('https://picsum.photos/seed/evoiu-hero/1920/1080')"></div>
+  <div class="hero-bg">
+    {% include cloudinary_img.html
+       src="https://res.cloudinary.com/dblfokmtd/image/upload/v1777033589/backyard-color-1_cs55zn.jpg"
+       alt=""
+       loading="eager"
+       sizes="100vw" %}
+  </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1>Evoiu</h1>
@@ -18,7 +24,11 @@ hero: true
     {% for gallery in site.galleries %}
     <a class="gallery-card" href="{{ site.baseurl }}{{ gallery.url }}">
       <div class="gallery-card-img-wrap">
-        <img class="gallery-card-img" src="{{ gallery.cover }}" alt="{{ gallery.title }}" loading="lazy">
+        {% include cloudinary_img.html
+           src=gallery.cover
+           alt=gallery.title
+           class="gallery-card-img"
+           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px" %}
       </div>
       <div class="gallery-card-body">
         <h2 class="gallery-card-title">{{ gallery.title }}</h2>

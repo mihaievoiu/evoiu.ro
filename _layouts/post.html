@@ -2,18 +2,18 @@
 layout: default
 ---
 <div class="post-header">
-  <a class="back-btn" href="{{ site.baseurl }}/blog.html">All Posts</a>
+  <a class="back-btn" href="{{ site.baseurl }}/blog/">All Posts</a>
   <div class="post-meta">{{ page.date | date: "%B %-d, %Y" }}</div>
   <h1 class="post-title">{{ page.title }}</h1>
 </div>
 
 {% if page.cover %}
-  {% if page.cover contains '://' %}
-    {% assign cover_src = page.cover %}
-  {% else %}
-    {% assign cover_src = site.baseurl | append: page.cover %}
-  {% endif %}
-<img class="post-cover" src="{{ cover_src }}" alt="{{ page.title }}">
+{% include cloudinary_img.html
+   src=page.cover
+   alt=page.title
+   class="post-cover"
+   loading="eager"
+   sizes="100vw" %}
 {% endif %}
 
 <div class="post-body">{{ content }}</div>

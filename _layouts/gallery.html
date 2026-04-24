@@ -3,7 +3,7 @@ layout: default
 fancybox: true
 ---
 <div class="gallery-detail-header">
-  <a class="back-btn" href="{{ site.baseurl }}/gallery.html">All Galleries</a>
+  <a class="back-btn" href="{{ site.baseurl }}/gallery/">All Galleries</a>
   <h1 class="gallery-detail-title">{{ page.title }}</h1>
   <p class="gallery-detail-desc">{{ page.description }}</p>
 </div>
@@ -11,11 +11,20 @@ fancybox: true
 <div class="container">
   <div class="masonry-grid">
     {% for image in page.images %}
+    {% if image.src contains '/upload/' %}
+      {% assign _lbparts = image.src | split: '/upload/' %}
+      {% assign _lburl = _lbparts[0] | append: '/upload/f_auto,q_auto,w_1600/' | append: _lbparts[1] %}
+    {% else %}
+      {% assign _lburl = image.src %}
+    {% endif %}
     <a class="masonry-item"
-       href="{{ image.src }}"
+       href="{{ _lburl }}"
        data-fancybox="gallery"
        data-caption="{{ image.caption }}">
-      <img src="{{ image.src }}" alt="{{ image.caption }}" loading="lazy">
+      {% include cloudinary_img.html
+         src=image.src
+         alt=image.caption
+         sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 400px" %}
     </a>
     {% endfor %}
   </div>

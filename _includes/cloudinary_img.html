@@ -1,0 +1,31 @@
+{% comment %}
+  Parameters:
+    src     — Cloudinary upload URL or any external URL
+    alt     — alt text
+    class   — optional CSS class on the <img>
+    sizes   — responsive sizes hint (default: viewport-aware fallback)
+    loading — "lazy" (default) or "eager"
+{% endcomment %}
+{% if include.src contains '/upload/' %}
+  {% assign _parts  = include.src | split: '/upload/' %}
+  {% assign _base   = _parts[0] | append: '/upload/' %}
+  {% assign _id     = _parts[1] %}
+  {% assign _sizes  = include.sizes | default: '(max-width: 640px) 100vw, (max-width: 1200px) 50vw, 800px' %}
+<img{% if include.class %} class="{{ include.class }}"{% endif %}
+     alt="{{ include.alt }}"
+     loading="{{ include.loading | default: 'lazy' }}"
+     decoding="async"
+     src="{{ _base }}f_auto,q_auto,w_1200/{{ _id }}"
+     srcset="{{ _base }}f_auto,q_auto,w_400/{{ _id }} 400w,
+             {{ _base }}f_auto,q_auto,w_800/{{ _id }} 800w,
+             {{ _base }}f_auto,q_auto,w_1200/{{ _id }} 1200w,
+             {{ _base }}f_auto,q_auto,w_1600/{{ _id }} 1600w,
+             {{ _base }}f_auto,q_auto,w_2000/{{ _id }} 2000w"
+     sizes="{{ _sizes }}">
+{% else %}
+<img{% if include.class %} class="{{ include.class }}"{% endif %}
+     src="{{ include.src }}"
+     alt="{{ include.alt }}"
+     loading="{{ include.loading | default: 'lazy' }}"
+     decoding="async">
+{% endif %}

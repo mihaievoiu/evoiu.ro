@@ -12,7 +12,11 @@ title: Galleries
     {% for gallery in site.galleries %}
     <a class="gallery-card" href="{{ site.baseurl }}{{ gallery.url }}">
       <div class="gallery-card-img-wrap">
-        <img class="gallery-card-img" src="{{ gallery.cover }}" alt="{{ gallery.title }}" loading="lazy">
+        {% include cloudinary_img.html
+           src=gallery.cover
+           alt=gallery.title
+           class="gallery-card-img"
+           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px" %}
       </div>
       <div class="gallery-card-body">
         <h2 class="gallery-card-title">{{ gallery.title }}</h2>
