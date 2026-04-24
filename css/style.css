@@ -130,9 +130,15 @@ nav.solid, nav.scrolled {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
   animation: heroPan 10s ease forwards;
+}
+
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 @keyframes heroPan {
@@ -427,6 +433,13 @@ nav.solid, nav.scrolled {
 .post-body h2 { font-size: 1.45rem; }
 .post-body h3 { font-size: 1.15rem; }
 .post-body p  { margin-bottom: 1.5rem; }
+
+.post-body img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 2rem auto;
+}
 
 .post-body blockquote {
   border-left: 2px solid var(--accent);

@@ -1,7 +1,7 @@
 ---
 title: Chasing the Golden Hour
 date: 2025-03-15
-cover: /content/blog/golden-hour/images/20180912-DSC07843.jpg
+cover: "https://res.cloudinary.com/dblfokmtd/image/upload/v1777033619/backyard-color-27_zovrxf.jpg"
 excerpt: The hour just after sunrise and before sunset transforms ordinary scenes into something extraordinary. Here's how I plan for it.
 ---
 
@@ -11,7 +11,7 @@ There's a reason photographers obsess over the golden hour. That brief period af
 
 I've spent years chasing this window, and I've learned that success comes down to three things: preparation, flexibility, and patience.
 
-![]({{ site.baseurl }}/content/blog/golden-hour/images/20180912-DSC07843.jpg)
+{% include cloudinary_img.html src="https://res.cloudinary.com/dblfokmtd/image/upload/v1777033619/backyard-color-27_zovrxf.jpg" alt="" sizes="(max-width: 740px) 100vw, 740px" %}
 
 ## Know Before You Go
 
@@ -19,7 +19,7 @@ The first rule is simple: know exactly when and where the sun will be. Apps like
 
 The second rule: arrive early. Golden hour doesn't wait. Conditions can change in minutes — a cloud bank rolls in, the light turns flat — and if you're still setting up when the best light hits, you've missed it.
 
-![]({{ site.baseurl }}/content/blog/golden-hour/images/20180609-DSC06561.jpg)
+{% include cloudinary_img.html src="https://res.cloudinary.com/dblfokmtd/image/upload/v1777033624/backyard-color-36_fq9cdq.jpg" alt="" sizes="(max-width: 740px) 100vw, 740px" %}
 
 ## Work the Scene
 
@@ -27,7 +27,7 @@ Once you're in position, resist the urge to shoot everything at once. Pick one c
 
 Look for long shadows — they add depth and drama. Look for how the warm light rakes across surfaces, revealing texture that's invisible at midday.
 
-![]({{ site.baseurl }}/content/blog/golden-hour/images/20200318-DSC05282.jpg)
+{% include cloudinary_img.html src="https://res.cloudinary.com/dblfokmtd/image/upload/v1777033630/backyard-color-8_jji09y.jpg" alt="" sizes="(max-width: 740px) 100vw, 740px" %}
 
 ## Embrace the Unexpected
 

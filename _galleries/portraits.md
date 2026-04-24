@@ -1,18 +1,12 @@
 ---
 title: Portraits
 description: Candid and intimate portraits — people and the stories they carry.
-cover: "https://picsum.photos/seed/portrait-cover/800/600"
+cover: "https://res.cloudinary.com/dblfokmtd/image/upload/v1777033630/backyard-color-8_jji09y.jpg"
 images:
-  - src: "https://picsum.photos/seed/por1/800/1100"
+  - src: "https://res.cloudinary.com/dblfokmtd/image/upload/v1777033619/backyard-color-27_zovrxf.jpg"
     caption: ""
-  - src: "https://picsum.photos/seed/por2/800/1200"
+  - src: "https://res.cloudinary.com/dblfokmtd/image/upload/v1777033624/backyard-color-36_fq9cdq.jpg"
     caption: ""
-  - src: "https://picsum.photos/seed/por3/900/1200"
-    caption: ""
-  - src: "https://picsum.photos/seed/por4/800/1050"
-    caption: ""
-  - src: "https://picsum.photos/seed/por5/800/1200"
-    caption: ""
-  - src: "https://picsum.photos/seed/por6/900/1200"
+  - src: "https://res.cloudinary.com/dblfokmtd/image/upload/v1777033630/backyard-color-8_jji09y.jpg"
     caption: ""
 ---
