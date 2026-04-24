@@ -287,14 +287,14 @@ nav.solid, nav.scrolled {
 /* ── MASONRY ── */
 
 .masonry-grid {
-  column-count: 3;
-  column-gap: 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  align-items: start;
   padding-bottom: 5rem;
 }
 
 .masonry-item {
-  break-inside: avoid;
-  margin-bottom: 0.75rem;
   overflow: hidden;
   display: block;
   cursor: pointer;
@@ -308,8 +308,8 @@ nav.solid, nav.scrolled {
 
 .masonry-item:hover img { transform: scale(1.02); }
 
-@media (max-width: 900px) { .masonry-grid { column-count: 2; } }
-@media (max-width: 480px) { .masonry-grid { column-count: 1; } }
+@media (max-width: 900px) { .masonry-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .masonry-grid { grid-template-columns: 1fr; } }
 
 /* ── GALLERY DETAIL ── */
 
