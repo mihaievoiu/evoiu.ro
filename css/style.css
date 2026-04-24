@@ -541,15 +541,15 @@ footer {
 
 /* Smaller image with 2px black border */
 .fancybox__content {
-  padding: 0.5rem;
+  padding: 1rem;
   background: transparent;
 }
 
 .fancybox__container .fancybox-image {
   outline: 2px solid #000 !important;
   outline-offset: -1px;
-  max-height: 92vh;
-  max-width: 92vw;
+  max-height: 80vh;
+  max-width: 80vw;
   width: auto;
   height: auto;
 }
