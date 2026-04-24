@@ -531,3 +531,55 @@ footer {
   .gallery-grid { grid-template-columns: 1fr; gap: 1.5rem; }
   .blog-grid { grid-template-columns: 1fr; gap: 2rem; }
 }
+
+/* ── FANCYBOX OVERRIDES ── */
+
+/* Solid white backdrop */
+.fancybox__backdrop {
+  background: #fff;
+}
+
+/* Smaller image with 2px black border */
+.fancybox__content {
+  padding: 2rem;
+  background: transparent;
+}
+
+.fancybox__image {
+  border: 2px solid #1b1a18;
+  max-height: 72vh;
+  max-width: 72vw;
+  width: auto;
+  height: auto;
+}
+
+/* Dark controls on light background */
+.fancybox__container {
+  --fancybox-accent-color: #1b1a18;
+}
+
+.carousel__button {
+  color: #1b1a18;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.carousel__button svg {
+  stroke: #1b1a18;
+  filter: none;
+}
+
+.fancybox__toolbar {
+  background: transparent;
+  color: #1b1a18;
+}
+
+.fancybox__toolbar .carousel__button {
+  color: #1b1a18;
+}
+
+.fancybox__infobar {
+  color: #1b1a18;
+  text-shadow: none;
+}
