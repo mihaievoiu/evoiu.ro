@@ -589,4 +589,13 @@ footer {
   .carousel__button.is-prev,
   .carousel__button.is-next { display: none !important; }
   .fancybox__thumbs          { display: none !important; }
+
+  .fancybox__content {
+    padding: 12px;
+  }
+
+  .fancybox__container .fancybox-image {
+    max-width: calc(100vw - 24px) !important;
+    max-height: calc(100vh - 24px) !important;
+  }
 }
