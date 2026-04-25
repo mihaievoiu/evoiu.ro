@@ -98,6 +98,13 @@ nav.solid, nav.scrolled {
 .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
 @media (max-width: 640px) {
+  /* backdrop-filter on nav makes position:fixed children relative to nav,
+     not the viewport — removing it while the menu is open fixes full-screen */
+  nav.menu-open {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
   .nav-toggle {
     display: flex;
     position: relative;
