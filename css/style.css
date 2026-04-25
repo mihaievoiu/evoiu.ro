@@ -287,14 +287,16 @@ nav.solid, nav.scrolled {
 /* ── MASONRY ── */
 
 .masonry-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.75rem;
-  align-items: start;
   padding-bottom: 5rem;
 }
 
+.masonry-sizer,
 .masonry-item {
+  width: calc((100% - 24px) / 3);
+}
+
+.masonry-item {
+  margin-bottom: 12px;
   overflow: hidden;
   display: block;
   cursor: pointer;
@@ -308,8 +310,12 @@ nav.solid, nav.scrolled {
 
 .masonry-item:hover img { transform: scale(1.02); }
 
-@media (max-width: 900px) { .masonry-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 480px) { .masonry-grid { grid-template-columns: 1fr; } }
+@media (max-width: 900px) {
+  .masonry-sizer, .masonry-item { width: calc((100% - 12px) / 2); }
+}
+@media (max-width: 480px) {
+  .masonry-sizer, .masonry-item { width: 100%; }
+}
 
 /* ── GALLERY DETAIL ── */
 
