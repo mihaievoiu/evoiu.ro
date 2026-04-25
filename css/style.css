@@ -98,7 +98,18 @@ nav.solid, nav.scrolled {
 .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
 @media (max-width: 640px) {
-  .nav-toggle { display: flex; }
+  /* backdrop-filter on nav makes position:fixed children relative to nav,
+     not the viewport — removing it while the menu is open fixes full-screen */
+  nav.menu-open {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+    position: relative;
+    z-index: 202;
+  }
   nav { padding: 1.25rem 1.5rem; }
   .nav-links {
     display: none;
@@ -109,7 +120,7 @@ nav.solid, nav.scrolled {
     align-items: center;
     justify-content: center;
     gap: 2.5rem;
-    z-index: 199;
+    z-index: 201;
   }
   .nav-links.open { display: flex; }
   .nav-links a { font-size: 1rem; color: var(--text) !important; opacity: 1; }
