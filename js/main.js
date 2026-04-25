@@ -8,13 +8,6 @@ toggle.addEventListener('click', () => {
   nav.classList.toggle('menu-open', open);
 });
 
-list.querySelectorAll('a').forEach(a =>
-  a.addEventListener('click', () => {
-    list.classList.remove('open');
-    toggle.setAttribute('aria-expanded', 'false');
-    nav.classList.remove('menu-open');
-  })
-);
 
 if (document.querySelector('.hero')) {
   window.addEventListener('scroll', () => {
