@@ -325,7 +325,13 @@ nav.solid, nav.scrolled {
   margin-bottom: 0.4rem;
 }
 
-.gallery-detail-desc { color: var(--muted); margin-bottom: 2.5rem; }
+.gallery-detail-body {
+  max-width: 640px;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 2.5rem;
+}
 
 /* ── BACK BUTTON ── */
 

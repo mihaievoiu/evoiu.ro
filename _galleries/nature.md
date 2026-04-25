@@ -1,4 +1,5 @@
 ---
+date: 2026-04-23
 title: Nature
 description: Landscapes, light, and the quiet beauty of the natural world.
 cover: "https://res.cloudinary.com/dblfokmtd/image/upload/v1777033624/backyard-color-36_fq9cdq.jpg"

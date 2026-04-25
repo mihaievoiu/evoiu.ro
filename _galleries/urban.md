@@ -1,4 +1,5 @@
 ---
+date: 2026-04-23
 title: Urban
 description: City life, architecture, and the geometry of everyday spaces.
 cover: "https://res.cloudinary.com/dblfokmtd/image/upload/v1777033619/backyard-color-27_zovrxf.jpg"
