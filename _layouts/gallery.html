@@ -11,8 +11,7 @@ fancybox: true
 </div>
 
 <div class="container">
-  <div class="masonry-grid" id="masonry-grid">
-    <div class="masonry-sizer"></div>
+  <div class="masonry-grid">
     {% for image in page.images %}
     {% if image.src contains '/upload/' %}
       {% assign _lbparts = image.src | split: '/upload/' %}
@@ -32,17 +31,3 @@ fancybox: true
     {% endfor %}
   </div>
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-<script>
-  var grid = document.getElementById('masonry-grid');
-  imagesLoaded(grid, function () {
-    new Masonry(grid, {
-      itemSelector: '.masonry-item',
-      columnWidth: '.masonry-sizer',
-      percentPosition: true,
-      gutter: 12
-    });
-  });
-</script>
