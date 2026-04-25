@@ -1,6 +1,6 @@
 ---
-title: Backyard Color
-description: Color photographs from the backyard.
+title: Backyard in Color
+description: Riding around Cluj and sometimes stopping to take photos.
 cover: "https://res.cloudinary.com/dblfokmtd/image/upload/v1777033589/backyard-color-1_cs55zn.jpg"
 images:
   - src: "https://res.cloudinary.com/dblfokmtd/image/upload/v1777033589/backyard-color-1_cs55zn.jpg"
@@ -78,3 +78,5 @@ images:
   - src: "https://res.cloudinary.com/dblfokmtd/image/upload/v1777033628/backyard-color-37_jatntk.jpg"
     caption: ""
 ---
+
+Starting with 2018 I was lucky enough to be able to explore the area around my home on a motorcycle. Back roads are easy enough to get to in the long summer evenings. It was here, more than anywhere else that I had a feeling of grace wash over me and I was able, for some brief moments, to stay completely in the present.

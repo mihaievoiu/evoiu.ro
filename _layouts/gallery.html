@@ -5,7 +5,9 @@ fancybox: true
 <div class="gallery-detail-header">
   <a class="back-btn" href="{{ site.baseurl }}/gallery/">All Galleries</a>
   <h1 class="gallery-detail-title">{{ page.title }}</h1>
-  <p class="gallery-detail-desc">{{ page.description }}</p>
+  {% if content != "" %}
+  <div class="gallery-detail-body">{{ content }}</div>
+  {% endif %}
 </div>
 
 <div class="container">
