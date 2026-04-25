@@ -1,4 +1,5 @@
 ---
+date: 2026-04-24
 title: Backyard in Color
 description: Riding around Cluj and sometimes stopping to take photos.
 cover: "https://res.cloudinary.com/dblfokmtd/image/upload/v1777033589/backyard-color-1_cs55zn.jpg"

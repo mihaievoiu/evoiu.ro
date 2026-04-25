@@ -21,7 +21,8 @@ hero: true
 <section class="section">
   <p class="section-label">Galleries</p>
   <div class="gallery-grid">
-    {% for gallery in site.galleries %}
+    {% assign galleries_sorted = site.galleries | sort: 'date' | reverse %}
+    {% for gallery in galleries_sorted %}
     <a class="gallery-card" href="{{ site.baseurl }}{{ gallery.url }}">
       <div class="gallery-card-img-wrap">
         {% include cloudinary_img.html

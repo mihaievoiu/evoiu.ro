@@ -1,4 +1,5 @@
 ---
+date: 2026-04-25
 title: "St. Marie's at Nicula"
 description: St. Marie celebration at Nicula Monastery.
 cover: "https://res.cloudinary.com/dblfokmtd/image/upload/v1777033532/st-marie-nicula-1_qn40ds.jpg"
