@@ -631,6 +631,8 @@ footer {
   background: #fff;
 }
 
+.fancybox__thumbs { display: none !important; }
+
 
 /* Smaller image with 2px black border */
 .fancybox__content {
