@@ -631,17 +631,20 @@ footer {
   background: #fff;
 }
 
+.fancybox__thumbs { display: none !important; }
+
+
 /* Smaller image with 2px black border */
 .fancybox__content {
-  padding: 1rem;
+  padding: 56px 90px;
   background: transparent;
 }
 
 .fancybox__container .fancybox-image {
   outline: 2px solid #000 !important;
   outline-offset: -1px;
-  max-height: 80vh;
-  max-width: 80vw;
+  max-height: calc(100vh - 112px);
+  max-width: calc(100vw - 180px);
   width: auto;
   height: auto;
 }
@@ -687,8 +690,6 @@ footer {
   .fancybox__nav,
   .carousel__button.is-prev,
   .carousel__button.is-next { display: none !important; }
-  .fancybox__thumbs          { display: none !important; }
-
   .fancybox__content {
     padding: 12px;
   }
