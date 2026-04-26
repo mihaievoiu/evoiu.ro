@@ -98,7 +98,7 @@ nav.solid, nav.scrolled {
 .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
-@media (max-width: 800px) {
+@media (max-width: 640px) {
   /* backdrop-filter on nav makes position:fixed children relative to nav,
      not the viewport — removing it while the menu is open fixes full-screen */
   nav.menu-open {
@@ -211,7 +211,7 @@ nav.solid, nav.scrolled {
 
 .hero-links a:hover { opacity: 0.8; }
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
   .hero-links {
     flex-direction: column;
     align-items: center;
@@ -614,7 +614,7 @@ footer {
 
 /* ── RESPONSIVE ADJUSTMENTS ── */
 
-@media (max-width: 800px) {
+@media (max-width: 640px) {
   .section { padding: 3.5rem 1.5rem; }
   .page-header { padding: 6rem 1.5rem 2rem; }
   .gallery-detail-header { padding: 6rem 1.5rem 1.5rem; }
@@ -683,7 +683,7 @@ footer {
   text-shadow: none;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 640px) {
   .fancybox__nav,
   .carousel__button.is-prev,
   .carousel__button.is-next { display: none !important; }
