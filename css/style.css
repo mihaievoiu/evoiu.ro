@@ -631,15 +631,6 @@ footer {
   background: #fff;
 }
 
-/* Fill the true visual viewport when mobile browser chrome hides.
-   --vh is set by JS via visualViewport.height for older iOS.
-   100dvh is the dynamic viewport unit for modern browsers. */
-.fancybox__backdrop,
-.fancybox__container {
-  height: var(--vh, 100vh) !important;
-  height: 100dvh !important;
-}
-
 /* Smaller image with 2px black border */
 .fancybox__content {
   padding: 1rem;
