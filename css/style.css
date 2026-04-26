@@ -626,9 +626,17 @@ footer {
 
 /* ── FANCYBOX OVERRIDES ── */
 
-/* Solid white backdrop */
+/* Solid white backdrop — use lvh so it covers full screen when mobile
+   browser chrome shrinks/hides and the visual viewport grows */
 .fancybox__backdrop {
   background: #fff;
+  height: 100vh;
+  height: 100lvh;
+}
+
+.fancybox__container {
+  height: 100vh;
+  height: 100lvh;
 }
 
 /* Smaller image with 2px black border */
