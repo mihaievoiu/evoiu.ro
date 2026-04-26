@@ -626,17 +626,18 @@ footer {
 
 /* ── FANCYBOX OVERRIDES ── */
 
-/* Solid white backdrop — use lvh so it covers full screen when mobile
-   browser chrome shrinks/hides and the visual viewport grows */
+/* Solid white backdrop */
 .fancybox__backdrop {
   background: #fff;
-  height: 100vh;
-  height: 100lvh;
 }
 
+/* Fill the true visual viewport when mobile browser chrome hides.
+   --vh is set by JS via visualViewport.height for older iOS.
+   100dvh is the dynamic viewport unit for modern browsers. */
+.fancybox__backdrop,
 .fancybox__container {
-  height: 100vh;
-  height: 100lvh;
+  height: var(--vh, 100vh) !important;
+  height: 100dvh !important;
 }
 
 /* Smaller image with 2px black border */
