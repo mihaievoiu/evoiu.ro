@@ -215,7 +215,7 @@ nav.solid, nav.scrolled {
   .hero-links {
     flex-direction: column;
     align-items: center;
-    gap: 1.75rem;
+    gap: 3rem;
   }
 }
 
