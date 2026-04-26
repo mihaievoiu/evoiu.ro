@@ -2,7 +2,7 @@
 date: 2026-04-26
 title: The Bridge
 description: The bridge that changed all bridges from the trip that changed all trips.
-cover: "https://res.cloudinary.com/dblfokmtd/image/upload/v1777192168/the-bridge-1_m60n10.jpg"
+cover: "https://res.cloudinary.com/dblfokmtd/image/upload/v1777192143/the-bridge-7_hmgf3o.jpg"
 images:
   - src: "https://res.cloudinary.com/dblfokmtd/image/upload/v1777192168/the-bridge-1_m60n10.jpg"
     caption: ""
