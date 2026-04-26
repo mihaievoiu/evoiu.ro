@@ -5,15 +5,18 @@ hero: true
 <section class="hero">
   <div class="hero-bg">
     {% include cloudinary_img.html
-       src="https://res.cloudinary.com/dblfokmtd/image/upload/v1777033589/backyard-color-1_cs55zn.jpg"
+       src="https://res.cloudinary.com/dblfokmtd/image/upload/v1777133074/backyard-bw-5_oowcff.jpg"
        alt=""
        loading="eager"
        sizes="100vw" %}
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <h1>Echoes</h1>
-    <p>Photography &amp; Visual Stories</p>
+    <div class="hero-links">
+      <a href="{{ site.baseurl }}/roads/">Roads<span>I've Travelled</span></a>
+      <a href="{{ site.baseurl }}/places/">Places<span>I've Seen</span></a>
+      <a href="{{ site.baseurl }}/stories/">Stories<span>I've Heard</span></a>
+    </div>
   </div>
   <div class="hero-scroll">Scroll</div>
 </section>

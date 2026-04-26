@@ -1,5 +1,6 @@
 ---
 date: 2026-04-25
+category: roads
 title: Backyard
 description: Riding around Cluj and sometimes stopping to take photos sometimes in bw.
 cover: "https://res.cloudinary.com/dblfokmtd/image/upload/v1777133071/backyard-bw-1_jjmnqk.jpg"

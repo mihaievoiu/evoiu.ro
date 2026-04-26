@@ -2,8 +2,22 @@
 layout: default
 fancybox: true
 ---
+{% if page.category == 'roads' %}
+  {% assign back_url = site.baseurl | append: '/roads/' %}
+  {% assign back_label = "Roads I've Travelled" %}
+{% elsif page.category == 'places' %}
+  {% assign back_url = site.baseurl | append: '/places/' %}
+  {% assign back_label = "Places I've Seen" %}
+{% elsif page.category == 'stories' %}
+  {% assign back_url = site.baseurl | append: '/stories/' %}
+  {% assign back_label = "Stories I've Heard" %}
+{% else %}
+  {% assign back_url = site.baseurl | append: '/roads/' %}
+  {% assign back_label = 'Back' %}
+{% endif %}
+
 <div class="gallery-detail-header">
-  <a class="back-btn" href="{{ site.baseurl }}/gallery/">All Galleries</a>
+  <a class="back-btn" href="{{ back_url }}">{{ back_label }}</a>
   <h1 class="gallery-detail-title">{{ page.title }}</h1>
   {% if content != "" %}
   <div class="gallery-detail-body">{{ content }}</div>

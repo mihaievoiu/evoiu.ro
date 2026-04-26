@@ -55,6 +55,7 @@ nav.solid, nav.scrolled {
 
 .nav-links {
   display: flex;
+  align-items: center;
   gap: 2.5rem;
   list-style: none;
 }
@@ -97,7 +98,7 @@ nav.solid, nav.scrolled {
 .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
-@media (max-width: 640px) {
+@media (max-width: 800px) {
   /* backdrop-filter on nav makes position:fixed children relative to nav,
      not the viewport — removing it while the menu is open fixes full-screen */
   nav.menu-open {
@@ -183,12 +184,39 @@ nav.solid, nav.scrolled {
   margin-bottom: 0.75rem;
 }
 
-.hero-content p {
-  font-size: clamp(0.8rem, 1.5vw, 0.95rem);
-  font-weight: 400;
-  letter-spacing: 0.2em;
+.hero-links {
+  display: flex;
+  gap: 8rem;
+  justify-content: center;
+  margin-top: 1.75rem;
+}
+
+.hero-links a {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  opacity: 0.8;
+  text-align: center;
+  line-height: 1;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  transition: opacity 0.2s;
+}
+
+.hero-links a span {
+  display: block;
+  margin-top: 0.35rem;
+  opacity: 0.75;
+}
+
+.hero-links a:hover { opacity: 0.8; }
+
+@media (max-width: 1024px) {
+  .hero-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
 }
 
 .hero-scroll {
@@ -526,17 +554,51 @@ nav.solid, nav.scrolled {
   .about-photo { aspect-ratio: 4/3; position: static; }
 }
 
+.nav-social {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-social a {
+  display: flex;
+  align-items: center;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+
+.nav-social a:hover { opacity: 1; }
+
 /* ── FOOTER ── */
 
 footer {
   border-top: 1px solid var(--border);
   padding: 2rem 2.5rem;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
 }
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-social a {
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+
+.footer-social a:hover { opacity: 1; }
 
 /* ── LOADING STATE ── */
 
