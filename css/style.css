@@ -549,17 +549,45 @@ nav.solid, nav.scrolled {
   .about-photo { aspect-ratio: 4/3; position: static; }
 }
 
+.nav-social a {
+  display: flex;
+  align-items: center;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+
+.nav-social a:hover { opacity: 1; }
+
 /* ── FOOTER ── */
 
 footer {
   border-top: 1px solid var(--border);
   padding: 2rem 2.5rem;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
 }
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-social a {
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+
+.footer-social a:hover { opacity: 1; }
 
 /* ── LOADING STATE ── */
 
