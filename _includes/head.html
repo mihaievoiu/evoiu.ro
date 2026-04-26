@@ -1,5 +1,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{% if page.title %}{{ page.title }} — {% endif %}Echoes</title>
+<link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/favicon.svg">
 {% if layout.fancybox %}<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.css">{% endif %}
 <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
+
+{% comment %} OG image: prefer cover, then photo (about), then site default {% endcomment %}
+{% assign _og_raw = page.cover | default: page.photo | default: page.og_image | default: site.og_image %}
+{% if _og_raw contains '/upload/' %}
+  {% assign _og_parts = _og_raw | split: '/upload/' %}
+  {% assign _og_img = _og_parts[0] | append: '/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/' | append: _og_parts[1] %}
+{% else %}
+  {% assign _og_img = _og_raw %}
+{% endif %}
+
+{% comment %} OG description: prefer page.description, then excerpt, then site default {% endcomment %}
+{% assign _og_desc = page.description | default: page.og_description %}
+{% unless _og_desc %}{% assign _og_desc = page.excerpt | strip_html | strip %}{% endunless %}
+{% unless _og_desc %}{% assign _og_desc = site.description %}{% endunless %}
+
+{% comment %} OG title {% endcomment %}
+{% if page.title %}{% assign _og_title = page.title | append: ' — Echoes' %}{% else %}{% assign _og_title = 'Echoes' %}{% endif %}
+
+<meta name="description" content="{{ _og_desc }}">
+<meta property="og:site_name" content="Echoes">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:title" content="{{ _og_title }}">
+<meta property="og:description" content="{{ _og_desc }}">
+{% if _og_img %}<meta property="og:image" content="{{ _og_img }}">{% endif %}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ _og_title }}">
+<meta name="twitter:description" content="{{ _og_desc }}">
+{% if _og_img %}<meta name="twitter:image" content="{{ _og_img }}">{% endif %}
