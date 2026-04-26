@@ -1,7 +1,7 @@
 title: Echoes
 cloudinary_cloud_name: dblfokmtd
-baseurl: "/evoiu.ro"
-url: "https://mihaievoiu.github.io"
+baseurl: ""
+url: "https://evoiu.ro"
 
 permalink: /blog/:slug/
 
