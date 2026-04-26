@@ -185,7 +185,7 @@ nav.solid, nav.scrolled {
 
 .hero-links {
   display: flex;
-  gap: 5rem;
+  gap: 8rem;
   justify-content: center;
   margin-top: 1.75rem;
 }
@@ -193,7 +193,7 @@ nav.solid, nav.scrolled {
 .hero-links a {
   color: #fff;
   font-size: 1.5rem;
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   text-align: center;
