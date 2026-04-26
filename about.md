@@ -1,6 +1,7 @@
 ---
 layout: about
 title: About
+description: "Mihai Evoiu — photographer based in Romania, working across landscape, street, and documentary photography."
 name: Mihai Evoiu
 photo: "https://res.cloudinary.com/dblfokmtd/image/upload/v1777068316/eu_hbyzie.png"
 ---
