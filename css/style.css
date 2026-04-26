@@ -631,6 +631,8 @@ footer {
   background: #fff;
 }
 
+.fancybox__thumbs { display: none !important; }
+
 /* Smaller image with 2px black border */
 .fancybox__content {
   padding: 1rem;
@@ -687,8 +689,6 @@ footer {
   .fancybox__nav,
   .carousel__button.is-prev,
   .carousel__button.is-next { display: none !important; }
-  .fancybox__thumbs          { display: none !important; }
-
   .fancybox__content {
     padding: 12px;
   }
