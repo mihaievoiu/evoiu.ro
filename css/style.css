@@ -353,6 +353,10 @@ nav.solid, nav.scrolled {
   margin-bottom: 2.5rem;
 }
 
+.gallery-detail-body p + p {
+  margin-top: 1rem;
+}
+
 /* ── BACK BUTTON ── */
 
 .back-btn {
