@@ -5,7 +5,9 @@
   </button>
   <ul class="nav-links">
     <li><a href="{{ site.baseurl }}/"{% if page.url == "/" %} class="active"{% endif %}>Home</a></li>
-    <li><a href="{{ site.baseurl }}/gallery/"{% if page.url contains "gallery" %} class="active"{% endif %}>Galleries</a></li>
-<li><a href="{{ site.baseurl }}/about/"{% if page.url contains "about" %} class="active"{% endif %}>About</a></li>
+    <li><a href="{{ site.baseurl }}/roads/"{% if page.url contains "roads" or page.category == "roads" %} class="active"{% endif %}>Roads</a></li>
+    <li><a href="{{ site.baseurl }}/places/"{% if page.url contains "places" or page.category == "places" %} class="active"{% endif %}>Places</a></li>
+    <li><a href="{{ site.baseurl }}/stories/"{% if page.url contains "stories" or page.category == "stories" %} class="active"{% endif %}>Stories</a></li>
+    <li><a href="{{ site.baseurl }}/about/"{% if page.url contains "about" %} class="active"{% endif %}>About</a></li>
   </ul>
 </nav>

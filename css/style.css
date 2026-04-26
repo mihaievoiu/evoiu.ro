@@ -183,12 +183,35 @@ nav.solid, nav.scrolled {
   margin-bottom: 0.75rem;
 }
 
-.hero-content p {
-  font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+.hero-links {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  margin-top: 1.75rem;
+}
+
+.hero-links a {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.75rem;
   font-weight: 400;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  opacity: 0.8;
+  text-align: center;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.hero-links a span {
+  display: block;
+  margin-top: 0.35rem;
+  opacity: 0.6;
+}
+
+.hero-links a:hover { color: #fff; }
+.hero-links a:hover span { opacity: 1; }
+
+@media (max-width: 480px) {
+  .hero-links { gap: 1.75rem; }
 }
 
 .hero-scroll {

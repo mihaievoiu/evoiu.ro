@@ -1,16 +1,16 @@
 ---
 layout: default
-title: Galleries
+title: "Stories I've Heard"
 ---
 <div class="page-header">
-  <h1>Galleries</h1>
-  <p>A collection of photographic work across different subjects and places.</p>
+  <h1>Stories I've Heard</h1>
 </div>
 
 <div class="container" style="padding-bottom: 5rem">
   <div class="gallery-grid">
     {% assign galleries_sorted = site.galleries | sort: 'date' | reverse %}
     {% for gallery in galleries_sorted %}
+    {% if gallery.category == 'stories' %}
     <a class="gallery-card" href="{{ site.baseurl }}{{ gallery.url }}">
       <div class="gallery-card-img-wrap">
         {% include cloudinary_img.html
@@ -24,6 +24,7 @@ title: Galleries
         <p class="gallery-card-desc">{{ gallery.description }}</p>
       </div>
     </a>
+    {% endif %}
     {% endfor %}
   </div>
 </div>
