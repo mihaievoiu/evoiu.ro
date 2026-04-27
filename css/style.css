@@ -200,7 +200,7 @@ nav.solid, nav.scrolled {
   text-align: center;
   line-height: 1;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
-  transition: opacity 0.2s;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .hero-links a span {
@@ -209,7 +209,12 @@ nav.solid, nav.scrolled {
   opacity: 0.75;
 }
 
-.hero-links a:hover { opacity: 0.8; }
+@media (hover: hover) {
+  .hero-links a:hover {
+    opacity: 1;
+    transform: translateY(-5px);
+  }
+}
 
 @media (max-width: 1024px) {
   .hero-links {
@@ -348,6 +353,7 @@ nav.solid, nav.scrolled {
 }
 
 .masonry-item:hover img { transform: scale(1.04); }
+.masonry-item:focus { outline: none; }
 
 @media (max-width: 900px) {
   .masonry-grid { grid-template-columns: repeat(2, 1fr); }
