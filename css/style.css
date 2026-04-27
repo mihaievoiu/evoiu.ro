@@ -200,25 +200,20 @@ nav.solid, nav.scrolled {
   text-align: center;
   line-height: 1;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.hero-link-main {
-  display: block;
-  transition: transform 0.35s ease;
-  transform-origin: center bottom;
-}
-
-.hero-link-sub {
+.hero-links a span {
   display: block;
   margin-top: 0.35rem;
   opacity: 0.75;
-  transition: transform 0.35s ease, opacity 0.35s ease;
-  transform-origin: center top;
 }
 
 @media (hover: hover) {
-  .hero-links a:hover .hero-link-main { transform: scale(1.18); }
-  .hero-links a:hover .hero-link-sub  { transform: scale(0.82); opacity: 0.55; }
+  .hero-links a:hover {
+    opacity: 1;
+    transform: translateY(-5px);
+  }
 }
 
 @media (max-width: 1024px) {
