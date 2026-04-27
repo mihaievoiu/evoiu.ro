@@ -627,6 +627,7 @@ footer {
   .section { padding: 3.5rem 1.5rem; }
   .page-header { padding: 6rem 1.5rem 2rem; }
   .gallery-detail-header { padding: 6rem 1.5rem 1.5rem; }
+  .container { padding: 0 1.5rem; }
   .post-header { padding: 6rem 1.5rem 2rem; }
   .post-body { padding: 0 1.5rem 4rem; }
   .gallery-grid { grid-template-columns: 1fr; gap: 1.5rem; }
