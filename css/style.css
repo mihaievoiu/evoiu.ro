@@ -260,7 +260,7 @@ nav.solid, nav.scrolled {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
 }
 
 .page-header {
@@ -371,7 +371,7 @@ nav.solid, nav.scrolled {
 /* ── GALLERY DETAIL ── */
 
 .gallery-detail-header {
-  padding: 7rem 1.5rem 2rem;
+  padding: 7rem 2.5rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -627,6 +627,7 @@ footer {
   .section { padding: 3.5rem 1.5rem; }
   .page-header { padding: 6rem 1.5rem 2rem; }
   .gallery-detail-header { padding: 6rem 1.5rem 1.5rem; }
+  .container { padding: 0 1.5rem; }
   .post-header { padding: 6rem 1.5rem 2rem; }
   .post-body { padding: 0 1.5rem 4rem; }
   .gallery-grid { grid-template-columns: 1fr; gap: 1.5rem; }
