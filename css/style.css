@@ -131,6 +131,7 @@ nav.solid, nav.scrolled {
     position: relative;
     z-index: 202;
   }
+  nav.menu-open .nav-toggle { color: var(--text); }
   nav { padding: 1.25rem 1.5rem; }
   .nav-links {
     display: none;
@@ -145,6 +146,7 @@ nav.solid, nav.scrolled {
   }
   .nav-links.open { display: flex; }
   .nav-links a { font-size: 1rem; color: var(--text) !important; opacity: 1; }
+  .nav-links .nav-theme-toggle { color: var(--text) !important; opacity: 1; }
 }
 
 /* ── HERO ── */
