@@ -260,7 +260,7 @@ nav.solid, nav.scrolled {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
 }
 
 .page-header {
@@ -371,7 +371,7 @@ nav.solid, nav.scrolled {
 /* ── GALLERY DETAIL ── */
 
 .gallery-detail-header {
-  padding: 7rem 2.5rem 2rem;
+  padding: 7rem 1.5rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
