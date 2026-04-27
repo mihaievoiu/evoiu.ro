@@ -3,6 +3,14 @@
 <title>{% if page.title %}{{ page.title }} — {% endif %}Echoes</title>
 <link rel="icon" type="image/svg+xml" href="{{ site.baseurl }}/favicon.svg">
 {% if layout.fancybox %}<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.css">{% endif %}
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    } catch (e) {}
+  })();
+</script>
 <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css">
 
 {% comment %} OG image: prefer cover, then photo (about), then site default {% endcomment %}

@@ -9,6 +9,25 @@
   --muted: #353535;
   --light: #f7f7f6;
   --border: #e8e8e4;
+  --nav-scrolled-bg: rgba(255, 255, 255, 0.96);
+  --lb-bg: #ffffff;
+  --lb-fg: #1b1a18;
+  --lb-btn-bg: rgba(255, 255, 255, 0.9);
+  --lb-btn-bg-strong: rgba(255, 255, 255, 0.8);
+}
+
+[data-theme="dark"] {
+  --bg: #1b1b1f;
+  --text: #ececec;
+  --accent: #5a8eff;
+  --muted: #a8a8ac;
+  --light: #26262b;
+  --border: #2e2e34;
+  --nav-scrolled-bg: rgba(27, 27, 31, 0.96);
+  --lb-bg: #1b1b1f;
+  --lb-fg: #ececec;
+  --lb-btn-bg: rgba(38, 38, 43, 0.9);
+  --lb-btn-bg-strong: rgba(38, 38, 43, 0.85);
 }
 
 html { font-size: 16px; scroll-behavior: smooth; }
@@ -19,9 +38,10 @@ body {
   color: var(--text);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
-a { color: inherit; text-decoration: none; }
+a { color: inherit; text-decoration: none; -webkit-tap-highlight-color: transparent; }
 img { max-width: 100%; display: block; }
 
 /* ── NAV ── */
@@ -40,7 +60,7 @@ nav {
 
 nav.solid, nav.scrolled {
   color: var(--text);
-  background: rgba(255,255,255,0.96);
+  background: var(--nav-scrolled-bg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 1px 0 var(--border);
@@ -578,6 +598,25 @@ nav.solid, nav.scrolled {
 
 .nav-social a:hover { opacity: 1; }
 
+.nav-theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+
+.nav-theme-toggle:hover { opacity: 1; }
+
+.nav-theme-toggle .icon-sun { display: none; }
+[data-theme="dark"] .nav-theme-toggle .icon-sun { display: block; }
+[data-theme="dark"] .nav-theme-toggle .icon-moon { display: none; }
+
 /* ── FOOTER ── */
 
 footer {
@@ -636,9 +675,10 @@ footer {
 
 /* ── FANCYBOX OVERRIDES ── */
 
-/* Solid white backdrop */
+/* Solid backdrop matching theme (fully opaque in both light and dark) */
 .fancybox__backdrop {
-  background: #fff;
+  background-color: var(--lb-bg) !important;
+  opacity: 1 !important;
 }
 
 .fancybox__thumbs { display: none !important; }
@@ -659,40 +699,40 @@ footer {
   height: auto;
 }
 
-/* Dark controls on light background */
+/* Controls on themed backdrop */
 .fancybox__container {
-  --fancybox-accent-color: #1b1a18;
+  --fancybox-accent-color: var(--lb-fg);
 }
 
 .carousel__button {
-  color: #1b1a18;
-  background: rgba(255, 255, 255, 0.9);
+  color: var(--lb-fg);
+  background: var(--lb-btn-bg);
   border-radius: 50%;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
 }
 
 .carousel__button svg {
-  stroke: #1b1a18;
+  stroke: var(--lb-fg);
   filter: none;
 }
 
 .fancybox__toolbar {
   background: transparent;
-  color: #1b1a18;
+  color: var(--lb-fg);
 }
 
 .fancybox__toolbar__column.is-right .f-button {
-  background: rgba(255, 255, 255, 0.8) !important;
+  background: var(--lb-btn-bg-strong) !important;
   border-radius: 4px;
 }
 
 .fancybox__toolbar__column.is-right .f-button svg {
-  stroke: #000 !important;
+  stroke: var(--lb-fg) !important;
   fill: none;
 }
 
 .fancybox__infobar {
-  color: #1b1a18;
+  color: var(--lb-fg);
   text-shadow: none;
 }
 

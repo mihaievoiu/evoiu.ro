@@ -14,3 +14,17 @@ if (document.querySelector('.hero')) {
     nav.classList.toggle('scrolled', window.scrollY > 60);
   }, { passive: true });
 }
+
+const themeToggle = nav.querySelector('.nav-theme-toggle');
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      document.documentElement.removeAttribute('data-theme');
+      try { localStorage.setItem('theme', 'light'); } catch (e) {}
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      try { localStorage.setItem('theme', 'dark'); } catch (e) {}
+    }
+  });
+}
