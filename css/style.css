@@ -200,7 +200,6 @@ nav.solid, nav.scrolled {
   text-align: center;
   line-height: 1;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
-  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .hero-links a span {
@@ -209,10 +208,14 @@ nav.solid, nav.scrolled {
   opacity: 0.75;
 }
 
+@keyframes hero-breathe {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+
 @media (hover: hover) {
   .hero-links a:hover {
-    opacity: 1;
-    transform: translateY(-5px);
+    animation: hero-breathe 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 }
 
