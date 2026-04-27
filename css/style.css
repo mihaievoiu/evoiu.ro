@@ -668,6 +668,8 @@ footer {
 
 /* ── FANCYBOX OVERRIDES ── */
 
+.fancybox__thumbs { display: none !important; }
+
 /* Solid white backdrop */
 .fancybox__backdrop {
   background: #fff;
@@ -768,7 +770,6 @@ footer {
   .fancybox__nav,
   .carousel__button.is-prev,
   .carousel__button.is-next { display: none !important; }
-  .fancybox__thumbs          { display: none !important; }
 
   .fancybox__content {
     padding: 12px;
