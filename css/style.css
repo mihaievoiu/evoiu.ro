@@ -215,7 +215,7 @@ nav.solid, nav.scrolled {
 
 @media (hover: hover) {
   .hero-links a:hover {
-    animation: hero-breathe 1s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    animation: hero-breathe 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 }
 
