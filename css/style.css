@@ -405,8 +405,8 @@ nav.solid, nav.scrolled {
 }
 
 .gallery-detail-body {
-  max-width: 640px;
-  font-size: 1.05rem;
+  max-width: 800px;
+  font-size: 1.1rem;
   line-height: 1.8;
   color: var(--muted);
   margin-bottom: 2.5rem;
