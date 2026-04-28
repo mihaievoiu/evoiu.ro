@@ -105,6 +105,6 @@ images:
     caption: ""
 ---
 
-The first encounter with India when coming from Europe, even from Eastern Europe, can be almost violent. The sounds, the colours, the smells, everything tells you from the start to "sit on your ass" because you will not understand anything at first, especially on this visit, especially in the beginning.
+The first encounter with India when coming from Europe, even from Eastern Europe, can be almost violent. The sounds, the colours, the smells, everything tells you from the start to "sit on your ass" because you will not understand anything, especially on this visit, especially now, at the start.
 
 But I was a young fool, and as I was walking in a daze during the first days, I came across Frere Bridge. It had everything. It was an overpass over a train station, it had a market underneath and this modern looking overpass on one side. It stuck like a powerful magnet on the fridge door. With a loud thud that snaps anything from your hand. It was a whole world and I wanted in. So I spent most of my first time in Mumbai there, hoping. It wasn't enough, but I can show you some views from the entrance.
