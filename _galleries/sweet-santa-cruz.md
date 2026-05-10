@@ -21,6 +21,8 @@ images:
     caption: ""
   - src: "https://res.cloudinary.com/dblfokmtd/image/upload/santa-cruz-8_nmpopm.jpg"
     caption: ""
+  - src: "https://res.cloudinary.com/dblfokmtd/image/upload/santa-cruz-9_t0kzek.jpg"
+    caption: ""
   - src: "https://res.cloudinary.com/dblfokmtd/image/upload/santa-cruz-10_tz0ura.jpg"
     caption: ""
   - src: "https://res.cloudinary.com/dblfokmtd/image/upload/santa-cruz-11_mqb47b.jpg"
