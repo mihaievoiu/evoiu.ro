@@ -289,7 +289,6 @@ nav.solid, nav.scrolled {
   padding: 8rem 2.5rem 2.5rem;
   max-width: 1200px;
   margin: 0 auto;
-  border-bottom: 1px solid var(--border);
   margin-bottom: 3rem;
 }
 
