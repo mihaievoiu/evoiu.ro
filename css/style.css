@@ -702,8 +702,8 @@ footer {
   --fancybox-accent-color: var(--lb-fg);
   /* Use dynamic viewport height so Chrome's mobile toolbar doesn't
      cause content to bleed beneath the overlay as bars show/hide */
-  height: 100vh;       /* fallback for browsers without dvh */
-  height: 100dvh;
+  height: 100vh !important;       /* fallback for browsers without dvh */
+  height: 100dvh !important;
 }
 
 .carousel__button {
