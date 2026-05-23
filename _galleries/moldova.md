@@ -2,7 +2,7 @@
 date: 2026-05-23
 category: places
 title: Moldova
-description: Moldova has lively markets and straight roads and hand painted signs and flowers and love and a language with bright round words that sing.
+description: In love at first sight with the other Moldova.
 cover: "https://res.cloudinary.com/dblfokmtd/image/upload/moldova-63_comydc.jpg"
 images:
   - src: "https://res.cloudinary.com/dblfokmtd/image/upload/moldova-1_h0fklf.jpg"
@@ -153,4 +153,4 @@ images:
     caption: ""
 ---
 
-Moldova has lively markets and straight roads and hand painted signs and flowers and love and a language with bright round words that sing and arrange all by themselves into poetry/
+Moldova has lively markets and straight roads and hand painted signs and flowers and love and a language with bright round words that sing and arrange all by themselves into poetry.
