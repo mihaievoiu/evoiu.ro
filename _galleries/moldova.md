@@ -3,7 +3,7 @@ date: 2026-05-23
 category: places
 title: Moldova
 description: In love at first sight with the other Moldova.
-cover: "https://res.cloudinary.com/dblfokmtd/image/upload/moldova-63_t308li.jpg"
+cover: "https://res.cloudinary.com/dblfokmtd/image/upload/moldova-54_pifezp.jpg"
 images:
   - src: "https://res.cloudinary.com/dblfokmtd/image/upload/moldova-1_u31wtu.jpg"
     caption: ""
