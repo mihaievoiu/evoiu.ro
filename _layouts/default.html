@@ -20,7 +20,66 @@
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5/dist/fancybox/fancybox.umd.js"></script>
   <script>
     Fancybox.bind('[data-fancybox="gallery"]', {
+      contentClick: false,
+      backdropClick: false,
+      Carousel: { Navigation: false },
       Toolbar: { display: { left: ['infobar'], middle: [], right: ['zoomIn','zoomOut','close'] } }
+    });
+
+    // Left/right half of the page navigates to the previous/next photo, as long as the
+    // pointer is vertically within the image's own height (not the full page height).
+    // Clicking outside that band (empty space above/below the image) closes the lightbox,
+    // taking over for the native backdropClick behaviour disabled above.
+    function fancyboxNavZone(e) {
+      const content = document.querySelector('.fancybox__slide.is-selected .fancybox__content');
+      if (!content) return null;
+      const rect = content.getBoundingClientRect();
+      if (e.clientY < rect.top || e.clientY > rect.bottom) return null;
+      return content.closest('.fancybox__slide');
+    }
+
+    // Show a left/right chevron cursor while hovering that zone, and nothing else
+    // (Fancybox/Panzoom otherwise shows its own grab cursor over the image).
+    let fancyboxHoverSlide = null;
+    function fancyboxClearCursor(slide) {
+      slide.classList.remove('is-cursor-prev', 'is-cursor-next');
+      const content = slide.querySelector('.fancybox__content');
+      if (content) content.style.removeProperty('cursor');
+    }
+    function fancyboxUpdateCursor(e) {
+      const slide = fancyboxNavZone(e);
+      if (slide !== fancyboxHoverSlide && fancyboxHoverSlide) {
+        fancyboxClearCursor(fancyboxHoverSlide);
+      }
+      fancyboxHoverSlide = slide;
+      if (!slide) return;
+      const isLeft = e.clientX < window.innerWidth / 2;
+      slide.classList.toggle('is-cursor-prev', isLeft);
+      slide.classList.toggle('is-cursor-next', !isLeft);
+      const content = slide.querySelector('.fancybox__content');
+      if (content) content.style.setProperty('cursor', getComputedStyle(slide).cursor, 'important');
+    }
+    document.addEventListener('mousemove', fancyboxUpdateCursor);
+
+    let fancyboxDownX = null;
+    document.addEventListener('pointerdown', (e) => {
+      fancyboxDownX = Fancybox.getInstance() ? e.clientX : null;
+    });
+    document.addEventListener('click', (e) => {
+      const fancybox = Fancybox.getInstance();
+      if (!fancybox || e.target.closest('button, a, .fancybox__toolbar, .fancybox__infobar')) return;
+      if (fancyboxDownX !== null && Math.abs(e.clientX - fancyboxDownX) > 10) { fancyboxDownX = null; return; }
+      fancyboxDownX = null;
+      const slide = fancyboxNavZone(e);
+      if (slide) {
+        // The new slide swaps in its own content element, which starts out without our
+        // cursor override; reapply immediately so it doesn't flash the default cursor.
+        if (e.clientX < window.innerWidth / 2) fancybox.prev();
+        else fancybox.next();
+        fancyboxUpdateCursor(e);
+      } else {
+        fancybox.close();
+      }
     });
   </script>
   {% endif %}
